@@ -216,13 +216,8 @@ func showLogs(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	result := struct {
-		Logs string
-	}{
-		Logs: string(data),
-	}
-
-	write(w, result)
+	w.WriteHeader(http.StatusOK)
+	w.Write(data)
 }
 
 func write(w http.ResponseWriter, object interface{}) {
