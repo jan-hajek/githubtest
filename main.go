@@ -210,7 +210,7 @@ func webhook(w http.ResponseWriter, r *http.Request) {
 
 func showLogs(w http.ResponseWriter, r *http.Request) {
 
-	data, err := ioutil.ReadFile("/log.txt")
+	data, err := ioutil.ReadFile("./log.txt")
 	if err != nil {
 		writeError(w, err)
 		return
